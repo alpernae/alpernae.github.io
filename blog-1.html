@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SecBlog - Alperen Ergel's Personal Blog</title>
+
+  <!--
+    - favicon
+  -->
+  <link rel="shortcut icon" href="./assets/images/fav.png" type="image/x-icon">
+
+  <!--
+    - custom css link
+  -->
+  <link rel="stylesheet" href="./assets/css/style.min.css">
+  <link rel="stylesheet" href="./assets/css/style.css">
+  <!--
+    - google font link
+  -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&display=swap" rel="stylesheet">
+</head>
+
+<body class="light-theme">
+
+  <!--
+    - #HEADER
+  -->
+
+  <header>
+
+    <div class="container">
+
+      <nav class="navbar">
+
+        <a href="index.html">
+          <img src="./assets/images/logo.svg" alt="Devblog's logo" width="150" height="40" class="logo-light">
+          <img src="./assets/images/logo-dark.svg" alt="Devblog's logo" width="150" height="40" class="logo-dark">
+        </a>
+
+        <div class="btn-group">
+
+          <button class="theme-btn theme-btn-mobile light">
+            <ion-icon name="moon" class="moon"></ion-icon>
+            <ion-icon name="sunny" class="sun"></ion-icon>
+          </button>
+
+          <button class="nav-menu-btn">
+            <ion-icon name="menu-outline"></ion-icon>
+          </button>
+
+        </div>
+
+        <div class="flex-wrapper">
+
+          <ul class="desktop-nav">
+
+            <li>
+              <a href="index.html" class="nav-link">Home</a>
+            </li>
+
+            <li>
+              <a href="aboutme.html" class="nav-link">About Me</a>
+            </li>
+
+            <li>
+              <a href="#letstalk" class="nav-link">Contact</a>
+            </li>
+
+          </ul>
+
+          <button class="theme-btn theme-btn-desktop light">
+            <ion-icon name="moon" class="moon"></ion-icon>
+            <ion-icon name="sunny" class="sun"></ion-icon>
+          </button>
+
+        </div>
+
+        <div class="mobile-nav">
+
+          <button class="nav-close-btn">
+            <ion-icon name="close-outline"></ion-icon>
+          </button>
+
+          <div class="wrapper">
+
+            <p class="h3 nav-title">Main Menu</p>
+
+            <ul>
+              <li class="nav-item">
+                <a href="#" class="nav-link">Home</a>
+              </li>
+
+              <li class="nav-item">
+                <a href="#" class="nav-link">About Me</a>
+              </li>
+
+              <li class="nav-item">
+                <a href="#" class="nav-link">Contact</a>
+              </li>
+            </ul>
+
+          </div>
+
+          <div>
+
+            <p class="h3 nav-title">Topics</p>
+
+            <ul>
+              <li class="nav-item">
+                <a href="#" class="nav-link">Database</a>
+              </li>
+
+              <li class="nav-item">
+                <a href="#" class="nav-link">Accessibility</a>
+              </li>
+
+              <li class="nav-item">
+                <a href="#" class="nav-link">Web Performance</a>
+              </li>
+            </ul>
+
+          </div>
+
+        </div>
+
+      </nav>
+
+    </div>
+
+  </header>
+
+
+
+
+
+
+
+
+
+  <div class="main">
+
+    <div class="container">
+
+      <!--
+        - BLOG SECTION
+      -->
+
+      <div class="blog">
+
+        <div class="blog-card-group">
+
+          <div class="blog-ca">
+
+            <div class="blog-card-banner">
+              <img src="./assets/images/blog-1/banner.png" alt=""
+                width="250" class="blog-banner-img">
+            </div>
+
+            <div class="blog-color">
+<br>
+              <button class="blog-text">Web Security</button>
+              <h3>
+                <a href="#" class="h3">
+                  Textpattern 4.8.8 Remote Code Execution (RCE) via Unrestricted File Upload Vulnerability
+                </a>
+                <br>
+              </h3>
+              <div class="wrapper-flex">
+              <p class="text-color" >
+                Hello hacker friends, Today I am writing about the vulnerability I found on textpattern.
+                Textpattern is a content management system and open source. I had previously found an XSS vulnerability on a version of the textpattern. <br><br>
+                Today, I did a vulnerability search on the most current version (4.8.8) and found the Remote Code Execution vulnerability, let's move on to the technical details.
+                First, let's run our Burp Suite tool and open our proxy browser located inside the burp. I had set up the CMS at my own localhost address for testing, so I go directly 
+                to localhost and then start monitoring all requests. After logging in to the admin panel, I explore the file upload page, I try to find out which directory the file 
+                I uploaded was uploaded to by uploading a sample file on it. When I saw that the files were uploaded as <b>/files/sample.file</b>, I tried to access the file I uploaded by
+                logging out of the admin account without logging in, as a result, I saw that I could access it, after this step,
+                I tried to log back into the admin account and upload the single line backdoor code written in php language and I saw that it was uploaded.
+                <br><br>
+                <img src="./assets/images/blog-1/test1.png" width="1000" height="600">
+                <br>
+                <br>
+
+                As you can see in the picture above, the attacker has uploaded the code with the content of such PHP files need to be uploaded through a more reliable way because as a 
+                result of the hijacking of an admin account, the attacker can take over the server to upload the attack codes.
+                Now let's move on to the second stage as an attacker, in the examinations I made before, we could access the file
+                 we uploaded from the outside, so we can access the backdoor we installed from the outside, so we can open a browser and type adress line
+                <b>target.com/files/attackfile?cmd={OS_COMMANDS}</b> as an attacker I can run any command on the server. Let's try to list the directories in the localhost.
+                <br><br>
+                <img src="./assets/images/blog-1/test2.png" width="1000" height="600">
+
+                <br>
+                And as an attacker, I've listed localhost directories. Remember the attacker can do more than this. <br> Thanks for reading the article. If you like it, don't forget to share (:
+                </p>
+
+              </div>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+
+
+
+
+      <!--
+        - ASIDE
+      -->
+
+      <div class="aside">
+        <div class="tags">
+
+          <h2 class="h2">Tags</h2>
+
+          <div class="wrapper">
+
+            <button class="hashtag">#websecurity</button>
+            <button class="hashtag">#cybersecurity</button>
+            <button class="hashtag">#applicationsecurity</button>
+            <button class="hashtag">#networksecurity</button>
+            <button class="hashtag">#redteam</button>
+            <button class="hashtag">#pentesting</button>
+            <button class="hashtag">#offensivesecurity</button>
+            <button class="hashtag">#infosec</button>
+            <button class="hashtag">#python</button>
+            <button class="hashtag">#golang</button>
+            <button class="hashtag">#bash</button>
+            <button class="hashtag">#securityresearch</button>
+            <button class="hashtag">#zeroday</button>
+            <button class="hashtag">#exploits</button>
+
+          </div>
+
+        </div>
+
+        <div id="letstalk" class="contact">
+
+          <h2 class="h2">Let's Talk</h2>
+
+          <div class="wrapper">
+
+            <p>
+              Do you want to learn more about how I can help your company overcome problems? Let us have a
+              conversation.
+            </p>
+
+            <ul class="social-link">
+
+              <li>
+                <a href="https://instagram.com/alpernae" class="icon-box discord">
+                  <ion-icon name="logo-instagram"></ion-icon>
+                </a>
+              </li>
+
+              <li>
+                <a href="https://twitter.com/alpernae" class="icon-box twitter">
+                  <ion-icon name="logo-twitter"></ion-icon>
+                </a>
+              </li>
+
+              <li>
+                <a href="https://github.com/alpernae" class="icon-box facebook">
+                  <ion-icon name="logo-github"></ion-icon>
+                </a>
+              </li>
+
+            </ul>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</main>
+
+
+
+
+  
+  <!--
+    - #FOOTER
+  -->
+
+  <footer>
+
+    <div class="container">
+
+      <div class="wrapper">
+
+        <a href="#" class="footer-logo">
+          <img src="./assets/images/logo.svg" alt="DevBlog's Logo" width="150" height="40" class="logo-light">
+          <img src="./assets/images/logo-dark.svg" alt="DevBlog's Logo" width="150" height="40" class="logo-dark">
+        </a>
+
+        <p class="footer-text">
+          Learn about vulnerabilities, how to secure your system, and more.
+        </p>
+
+      </div>
+
+      <div class="wrapper">
+
+        <p class="footer-title">Quick Links</p>
+
+        <ul>
+          <li>
+            <a href="#" class="footer-link">About Us</a>
+          </li>
+
+          <li>
+            <a href="index.html#letstalk" class="footer-link">Contact Us</a>
+          </li>
+
+        </ul>
+
+      </div>
+
+      <div class="wrapper">
+
+        <p class="footer-title">Social Links</p>
+
+        <ul>
+          <li>
+            <a href="https://instagram.com/alpernae" class="footer-link">Instagram</a>
+          </li>
+          
+          <li>
+            <a href="https://twitter.com/alpernae" class="footer-link">Twitter</a>
+          </li>
+          
+          <li>
+            <a href="https://github.com/alpernae" class="footer-link">Github</a>
+          </li>
+
+          <li>
+            <a href="https://www.exploit-db.com/?author=10463" class="footer-link">Exploit-DB</a>
+          </li>
+
+        </ul>
+
+      </div>
+
+    </div>
+
+    <p class="copyright">
+      &copy; Copyright 2022 <a href="#">@alpernae</a>
+    </p>
+
+  </footer>
+
+
+
+
+
+<!--
+  - custom js link
+-->
+<script src="./assets/js/script.min.js"></script>
+
+<!--
+  - ionicon link
+-->
+<script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+</body>
+</html>
