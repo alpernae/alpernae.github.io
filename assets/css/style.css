@@ -349,16 +349,20 @@ header .btn-group {
   #HERO SECTION
 \*-----------------------------------*/
 
+
 .hero {
   background: var(--background-primary);
   padding-top:    2rem;
   padding-bottom: var(--py);
+  padding-left:25rem ;
   text-align: center;
 }
 
+
 .hero .h1 {
-  margin-bottom: 1rem;
+  margin-bottom: 10rem;
   line-height: 1.6;
+  color:red;
 }
 
 .hero b {
@@ -389,6 +393,9 @@ header .btn-group {
   #BLOG SECTION
 \*-----------------------------------*/
 
+.h1{
+padding-top: 500px;
+}
 .main {
   background: var(--background-secondary);
   padding: var(--py) 0;
@@ -828,7 +835,7 @@ footer .wrapper { text-align: center; }
    * HERO 
    */
 
-  .hero { text-align: left; }
+  .hero { text-align: center; }
 
   .hero .container {
     display: grid;
