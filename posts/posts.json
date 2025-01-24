@@ -1,0 +1,16 @@
+{
+    "posts": [
+        {
+            "title": "My First Blog Post",
+            "file": "first-post.md",
+            "category": "GENERAL",
+            "date": "2024-01-01"
+        },
+        {
+            "title": "My second Blogs Post",
+            "file": "second-post.md",
+            "category": "EXPLOIT",
+            "date": "2024-01-01"
+        }
+    ]
+}
