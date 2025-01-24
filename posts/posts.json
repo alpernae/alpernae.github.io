@@ -2,7 +2,7 @@
     "posts": [
         {
             "title": "My First Blog Post",
-            "file": "blob/main/posts/first-post.md",
+            "file": "../blob/main/posts/first-post.md",
             "category": "GENERAL",
             "date": "2024-01-01"
         },
