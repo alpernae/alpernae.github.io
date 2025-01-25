@@ -89,7 +89,7 @@ async function loadPost(url) {
 // Load blog posts and handle categories
 async function loadBlogPosts() {
     try {
-        const response = await fetch('./posts/posts.json');
+        const response = await fetch('https://raw.githubusercontent.com/alpernae/alpernae.github.io/refs/heads/main/posts/posts.json');
         const data = await response.json();
         
         const categories = [...new Set(data.posts.map(post => post.category))];
@@ -127,7 +127,7 @@ async function loadBlogPosts() {
             categoryPosts.forEach(post => {
                 const li = document.createElement('li');
                 li.innerHTML = `<span class="post-title">${post.title}</span>`;
-                li.addEventListener('click', () => loadPost(`./posts/${post.file}`));
+                li.addEventListener('click', () => loadPost(post.url)); // Use the URL from the JSON
                 postsUl.appendChild(li);
             });
             
@@ -136,7 +136,7 @@ async function loadBlogPosts() {
 
         // Load the first post by default
         if (data.posts.length > 0) {
-            loadPost(`./posts/${data.posts[0].file}`);
+            loadPost(data.posts[0].url); // Use the URL from the JSON
         }
     } catch (error) {
         console.error('Error loading blog posts:', error);
