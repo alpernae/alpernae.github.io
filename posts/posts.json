@@ -1,15 +1,15 @@
 {
     "posts": [
         {
-            "title": "My First Blog Post",
-            "url": "https://raw.githubusercontent.com/alpernae/alpernae.github.io/refs/heads/main/posts/first-post.md",
+            "title": "Uncovering Path Traversal in Devika v1: A Deep Dive into CVE-2024-40422",
+            "url": "https://raw.githubusercontent.com/alpernae/alpernae.github.io/refs/heads/main/posts/CVE-2024-40422.md",
             "category": "EXPLOIT",
             "date": "2024-01-01"
         },
         {
-            "title": "My second Blog Post",
+            "title": "My first Blog Post",
             "url": "https://raw.githubusercontent.com/alpernae/alpernae.github.io/main/posts/second-post.md",
-            "category": "EXPLOIT",
+            "category": "GENERAL",
             "date": "2024-01-01"
         }
     ]
