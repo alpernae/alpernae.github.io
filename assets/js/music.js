@@ -2,8 +2,19 @@ class RetroMusicPlayer {
     constructor() {
         this.playlist = [
             // Add your YouTube video IDs and titles here
-            { id: 'wlei_MKXomc', title: 'Never Gonna Give You Up' },
-            { id: 'djV11Xbc914', title: 'Take On Me' },
+            { id: '7YoDt-MxhHg', title: 'antisec - ytcracker' },
+            { id: '1YW_6OXYB7E', title: 'subnet mask off - ytcracker' },
+            { id: 'FoUWHfh733Y', title: 'All The Things - Dual Core' },
+            { id: 'rhXgHa3akAg', title: 'Hostage Down - Dual Core' },
+            { id: 'wlei_MKXomc', title: 'Edge of the World - Arthur B. Rubinstein' },
+            { id: 'djV11Xbc914', title: 'Take On Me - a ha' },
+            { id: '07-jqBxdb7Y', title: 'War Games - Phathom'},
+            { id: 'CS0fpyBUBFs', title: 'Safehouse - Phathom'},
+            { id: 'j5rDM0gPsfg', title: 'LOTTO - DJ Mykael V'},
+            { id: 'A-Jfy7egklQ', title: 'zehir4.asp - Utku Şen'},
+            { id: 'n241TvVUe4Y', title: 'Tabs - Ohm-I'},
+            { id: 't5jej1GKCos', title: 'Nerd Life - ytcracker'},
+            { id: 'iJTsD8Ro37M', title: 'Clickin - Ohm-I'},
             // Add more songs as needed
         ];
         this.currentTrack = 0;

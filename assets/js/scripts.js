@@ -172,6 +172,7 @@ function loadAbout() {
                 <li>Bugcrowd: <a href="https://bugcrowd.com/alpernae" style="color: white">Bugcrowd</a></li>
                 <li>YWH: <a href="https://yeswehack.com/hunters/alpernae" style="color: white">YesWeHack</a></li>
                 <li>Intigriti: <a href="https://intigriti.com/profile/alpernae" style="color: white">Intigriti</a></li>
+                <li>Exploit-db: <a href="https://www.exploit-db.com/?author=10463" style="color: white">ExploitDB</a></li>
             </ul>
         </div>
     `;
