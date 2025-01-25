@@ -1,6 +1,6 @@
 {
     "posts": [
-                {
+        {
             "title": "Uncovering Path Traversal in Devika v1: A Deep Dive into CVE-2024-40422",
             "url": "https://raw.githubusercontent.com/alpernae/alpernae.github.io/refs/heads/main/posts/CVE-2024-40422.md",
             "category": "EXPLOIT",
