@@ -2,13 +2,13 @@
     "posts": [
         {
             "title": "My First Blog Post",
-            "file": "https://raw.githubusercontent.com/alpernae/alpernae.github.io/refs/heads/main/posts/first-post.md",
+            "url": "https://raw.githubusercontent.com/alpernae/alpernae.github.io/refs/heads/main/posts/first-post.md",
             "category": "GENERAL",
             "date": "2024-01-01"
         },
         {
-            "title": "My second Blogs Post",
-            "file": "../second-post.md",
+            "title": "My second Blog Post",
+            "url": "https://raw.githubusercontent.com/alpernae/alpernae.github.io/main/posts/second-post.md",
             "category": "EXPLOIT",
             "date": "2024-01-01"
         }
